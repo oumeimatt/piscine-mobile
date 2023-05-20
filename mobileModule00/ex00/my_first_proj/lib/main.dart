@@ -38,6 +38,7 @@ class MyHome extends StatelessWidget {
                     decoration: TextDecoration.none,
                     color: Color.fromRGBO(246, 243, 242, 2),
                     fontWeight: FontWeight.normal,
+                    fontSize: 25,
                     
                   ),
                 ),
