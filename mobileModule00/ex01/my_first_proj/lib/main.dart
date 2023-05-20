@@ -8,22 +8,13 @@ void main() {
       theme:ThemeData(
         scaffoldBackgroundColor : Colors.white,
       ),
-      home:  MyApp(),
+      home: const MyHome(),
     ),
   );
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return MyAppState();
-  }
-}
-
-class MyAppState extends State<MyApp> {
-  bool changeText = false;
+class MyHome extends StatelessWidget {
+  const MyHome({super.key});
 
   @override
   Widget build(context){
@@ -39,11 +30,11 @@ class MyAppState extends State<MyApp> {
                 color : const Color.fromRGBO(98, 97, 28, 2),
                 borderRadius: BorderRadius.circular(10.0)
               ),
-              child:  Padding(
-                padding: const EdgeInsets.all(8.0),
-                child:
-                 Text( changeText ? 'Hello World' : 'A  simple text',
-                  style: const TextStyle(
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'A  simple text',
+                  style: TextStyle(
                     decoration: TextDecoration.none,
                     color: Color.fromRGBO(246, 243, 242, 2),
                     fontWeight: FontWeight.normal,
@@ -62,9 +53,7 @@ class MyAppState extends State<MyApp> {
                   padding: const EdgeInsets.all(10.0),
                 ),
               onPressed : (){
-                setState(() {
-                  changeText = !changeText;
-                });
+                print('Button pressed');
               },
               child: const Text('Click me'),
             ),
